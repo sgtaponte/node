@@ -21,15 +21,15 @@ app.use((req, res, next)=>{
   });
   next();
 });
-app.use((req, res, next)=>{
-    console.log('We couldnt find that site.');
-      res.render('maintenance.hbs',{
-        pageTitle:'Under Maintenance',
-        currentYear: new Date().getFullYear()
-      });
-
-
-});
+// app.use((req, res, next)=>{
+//     console.log('We couldnt find that site.');
+//       res.render('maintenance.hbs',{
+//         pageTitle:'Under Maintenance',
+//         currentYear: new Date().getFullYear()
+//       });
+//
+//
+// });
 // app.get('/', (req, res) =>{
 //
 //   res.send({
@@ -41,6 +41,7 @@ app.use((req, res, next)=>{
 //   });
 // });
 
+
 app.get('/', (req,res) =>{
   res.render('home.hbs', {
     pageTitle: 'Home Title',
@@ -50,6 +51,12 @@ app.get('/', (req,res) =>{
   });
 });
   //
+app.get('/projects', (req,res) =>{
+  res.render('projects.hbs', {
+    pageTitle: 'Projects Page',
+    currentYear: new Date().getFullYear()
+  });
+});
 
 app.get('/about', (req,res) =>{
   res.render('about.hbs', {
